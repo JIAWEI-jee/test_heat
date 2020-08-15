@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        08/11/2020  16:57:40  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/15/2020  11:37:56  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -59,7 +59,7 @@ INPUT MODULES INCLUDED:
 LINK MAP OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
 
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 2
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -119,7 +119,7 @@ LINK MAP OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
             XDATA   FEB1H     0001H     ABSOLUTE     
             XDATA   FEB2H     0001H     ABSOLUTE     
             XDATA   FEB3H     0001H     ABSOLUTE     
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 3
 
 
             XDATA   FEB4H     0001H     ABSOLUTE     
@@ -179,7 +179,7 @@ LINK MAP OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
             XDATA   FF1CH     0001H     ABSOLUTE     
             XDATA   FF1DH     0001H     ABSOLUTE     
                     FF1EH     0022H                  *** GAP ***
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 4
 
 
             XDATA   FF40H     0001H     ABSOLUTE     
@@ -239,7 +239,7 @@ LINK MAP OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
             CODE    17BAH     0135H     UNIT         ?PR?_GET_VOLTAGE?ADC
             CODE    18EFH     011CH     UNIT         ?PR?TIMER0_RPT?TIMER
             CODE    1A0BH     0116H     UNIT         ?PR?FLASH_INIT?FLASH
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 5
 
 
             CODE    1B21H     00FFH     UNIT         ?PR?TEMPERATURE_HANDLE?MAIN
@@ -299,7 +299,7 @@ LINK MAP OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
 OVERLAY MAP OF MODULE:   .\Objects\K8104_hex (?C_STARTUP)
 
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 6
 
 
 SEGMENT                                     BIT_GROUP          DATA_GROUP          XDATA_GROUP
@@ -359,7 +359,7 @@ SEGMENT                                     BIT_GROUP          DATA_GROUP       
 
 ?PR?DETECTION_INPUT?MAIN                 -----    -----      -----    -----      -----    -----
   +--> ?PR?DETECTION_INPUT_VOLTAGE?ADC
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 7
 
 
 
@@ -419,7 +419,7 @@ SEGMENT                                     BIT_GROUP          DATA_GROUP       
 ?PR?FLAH_SAVE_DATA?FLASH                 -----    -----      -----    -----      -----    -----
   +--> ?PR?_FLASH_ERASEBLOCK?FLASH
   +--> ?PR?_FLASH_WRITEARR?FLASH
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 8
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 8
 
 
   +--> ?PR?_FLASH_READARR?FLASH
@@ -479,7 +479,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:217FH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 9
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 9
 
 
   -------         MODULE        MAIN
@@ -539,7 +539,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   X:FEA2H         PUBLIC        CRCC
   X:FE85H         PUBLIC        T5CON1
   X:FEE8H         PUBLIC        SCR4
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 10
 
 
   X:FEEAH         PUBLIC        SCR5
@@ -599,7 +599,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   X:FF9CH         PUBLIC        PWM3_MAP
   X:FF8FH         PUBLIC        CLKO_MAP
   X:FE92H         PUBLIC        FREQ_CLK
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 11
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 11
 
 
   C:2750H         PUBLIC        Clock
@@ -659,7 +659,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1E39H         LINE#         88
   C:1E42H         LINE#         89
   C:1E4BH         LINE#         90
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 12
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 12
 
 
   C:1E4BH         LINE#         91
@@ -719,7 +719,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:166FH         LINE#         156
   C:1672H         LINE#         157
   C:1672H         LINE#         159
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 13
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 13
 
 
   C:168EH         LINE#         160
@@ -779,7 +779,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1BCFH         LINE#         240
   C:1BE6H         LINE#         241
   C:1BE9H         LINE#         242
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 14
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 14
 
 
   C:1BF1H         LINE#         243
@@ -839,7 +839,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:2753H         LINE#         319
   C:2759H         LINE#         320
   -------         ENDPROC       CLOCK
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 15
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 15
 
 
   -------         PROC          CONTROLL_HEAT
@@ -899,7 +899,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:2660H         LINE#         418
   C:2665H         LINE#         419
   C:2666H         LINE#         421
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 16
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 16
 
 
   C:2666H         LINE#         423
@@ -959,7 +959,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:26B8H         PUBLIC        get_adc_val_P07
   D:00A8H         PUBLIC        IE
   D:00F8H         PUBLIC        RSTFR
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 17
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 17
 
 
   C:17BAH         PUBLIC        _get_voltage
@@ -1019,7 +1019,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   D:0006H         SYMBOL        adc_val
   -------         ENDDO         
   C:26E4H         LINE#         49
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 18
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 18
 
 
   C:26E4H         LINE#         50
@@ -1079,7 +1079,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   -------         ENDMOD        ADC
 
   -------         MODULE        FLASH
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 19
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 19
 
 
   C:0000H         SYMBOL        _ICE_DUMMY_
@@ -1139,7 +1139,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   D:0007H         SYMBOL        fuc_SaveData
   D:0004H         SYMBOL        addr
   C:2558H         LINE#         44
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 20
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 20
 
 
   C:255FH         LINE#         45
@@ -1199,7 +1199,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   -------         ENDDO         
   C:2475H         LINE#         98
   C:2475H         LINE#         99
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 21
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 21
 
 
   C:2475H         LINE#         100
@@ -1259,7 +1259,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:2597H         LINE#         158
   -------         ENDPROC       FLAH_SAVE_DATA
   -------         ENDMOD        FLASH
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 22
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 22
 
 
 
@@ -1319,7 +1319,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:277AH         LINE#         47
   C:277DH         LINE#         48
   C:277DH         LINE#         49
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 23
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 23
 
 
   -------         ENDPROC       _PUTCHAR
@@ -1379,7 +1379,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:207BH         LINE#         38
   C:208AH         LINE#         39
   C:208AH         LINE#         40
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 24
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 24
 
 
   C:2090H         LINE#         41
@@ -1439,7 +1439,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:239EH         LINE#         105
   C:239EH         LINE#         106
   C:23A4H         LINE#         107
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 25
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 25
 
 
   C:23AAH         LINE#         109
@@ -1499,7 +1499,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 26
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 26
 
 
   D:00F8H         PUBLIC        RSTFR
@@ -1559,7 +1559,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   D:00D0H         PUBLIC        PSW
   C:2202H         PUBLIC        set_time_sec
   -------         PROC          _SET_TIME_SEC_VAL
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 27
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 27
 
 
   D:0006H         SYMBOL        sec
@@ -1619,7 +1619,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:2259H         LINE#         73
   C:225BH         LINE#         74
   C:225FH         LINE#         75
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 28
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 28
 
 
   C:225FH         LINE#         76
@@ -1679,7 +1679,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:19CFH         LINE#         156
   C:19D5H         LINE#         157
   C:19D9H         LINE#         158
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 29
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 29
 
 
   C:19DDH         LINE#         160
@@ -1739,7 +1739,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:251DH         LINE#         19
   C:2524H         LINE#         21
   C:2526H         LINE#         22
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 30
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 30
 
 
   C:2528H         LINE#         23
@@ -1799,7 +1799,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:2763H         LINE#         70
   C:2763H         LINE#         72
   C:2769H         LINE#         73
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 31
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 31
 
 
   C:276BH         LINE#         74
@@ -1859,7 +1859,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1D8CH         LINE#         141
   C:1D8FH         LINE#         143
   C:1D95H         LINE#         144
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 32
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 32
 
 
   C:1D96H         LINE#         145
@@ -1919,7 +1919,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1230H         LINE#         378
   C:1239H         LINE#         379
   C:1239H         LINE#         380
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 33
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 33
 
 
   C:123BH         LINE#         381
@@ -1979,7 +1979,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:12C7H         LINE#         439
   C:12C7H         LINE#         440
   C:12C7H         LINE#         441
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 34
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 34
 
 
   C:12CAH         LINE#         443
@@ -2039,7 +2039,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1355H         LINE#         500
   C:1355H         LINE#         501
   C:135EH         LINE#         502
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 35
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 35
 
 
   C:135EH         LINE#         503
@@ -2099,7 +2099,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:13E3H         LINE#         559
   C:13EDH         LINE#         560
   C:13EDH         LINE#         562
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 36
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 36
 
 
   C:13EFH         LINE#         563
@@ -2159,7 +2159,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:147AH         LINE#         619
   C:147CH         LINE#         620
   C:147CH         LINE#         621
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 37
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 37
 
 
   C:1486H         LINE#         622
@@ -2219,7 +2219,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:14FFH         LINE#         667
   C:14FFH         LINE#         668
   C:150CH         LINE#         669
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 38
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 38
 
 
   C:150CH         LINE#         670
@@ -2279,7 +2279,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1588H         LINE#         726
   C:1588H         LINE#         727
   C:1588H         LINE#         728
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 39
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 39
 
 
   C:158BH         LINE#         730
@@ -2339,7 +2339,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:1609H         LINE#         784
   C:1609H         LINE#         785
   C:160BH         LINE#         786
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 40
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 40
 
 
   C:160DH         LINE#         787
@@ -2399,7 +2399,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   -------         ENDPROC       PID_INIT
   -------         PROC          PID_OPERATION
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 41
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 41
 
 
   X:0006H         SYMBOL        temp
@@ -2459,7 +2459,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:10D8H         LINE#         96
   C:10DEH         LINE#         97
   C:10DEH         LINE#         98
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 42
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 42
 
 
   C:1107H         LINE#         99
@@ -2519,7 +2519,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:09AEH         PUBLIC        _PRINTF
   C:09A8H         PUBLIC        _SPRINTF
   -------         ENDMOD        PRINTF
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 43
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 43
 
 
 
@@ -2579,7 +2579,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\K8104_hex (?C_STARTUP)
   C:085EH         PUBLIC        ?C?LNEG
   -------         ENDMOD        ?C?LNEG
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2020  16:57:40  PAGE 44
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/15/2020  11:37:56  PAGE 44
 
 
   -------         MODULE        ?C?SLCMP

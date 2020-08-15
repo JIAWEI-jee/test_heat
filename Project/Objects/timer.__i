@@ -1,1 +1,0 @@
-"..\hardware\Timer\timer.c" LARGE OPTIMIZE (8,SPEED) BROWSE INCDIR(..\hardware\DELAY;..\hardware\ADC;..\hardware\Flash;..\hardware\Uart;..\hardware\Key;..\hardware\Pwm;..\hardware\WDT;..\hardware\Timer;..\hardware\LCDdisplay;..\hardware\PID) DEBUG OBJECTEXTEND PRINT(.\Listings\timer.lst) TABS (2) OBJECT(.\Objects\timer.obj)
