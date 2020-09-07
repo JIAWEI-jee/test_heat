@@ -30,7 +30,7 @@ u8  error_std = 0;
 
 void Clock ( void );
 void Set_Temp ( void );
-void Controll_Heat ( void );
+//void Controll_Heat ( void );
 //void Protect ( void );
 void Detection_Input(void);
 
@@ -280,7 +280,7 @@ void temperature_handle ( void )
 				PID_Operation ();
 				lcd_display_time ( flash_info.timer );
 				lcd_display_gap ( flash_info.gap );
-				Controll_Heat (  );
+//				Controll_Heat (  );
 			}
 			else
 			{
@@ -358,9 +358,10 @@ void main()
 
 		temperature_handle();
 		key_handle ();
+		 Heat_Operation ( 200 );
 	//	Protect ();
 		clear_wdt();
-
+ 
 	}
 }
 
@@ -373,36 +374,6 @@ void Clock ( void )
 	CLKDIV = 0x01;						//Fosc 1分频得到Fcpu，Fcpu=16MHz
 }
 
-
-/***************************************************/
-/*
-函数名称；Controll_Heat()
-函数功能：加热PWM控制
-入口参数：null
-出口参数：null
-函数说明；根据控制算法得到的占空比输出功率
-*/
-/********************************************************/
-
-void Controll_Heat ( void )
-{
-	//gm_printf ( " spid.iPriVal = %d \r\n",  spid.iPriVal);
-	u8 heat_step_val = 100;
-	if (Input_Voltage_std == V_24_status)
-		{
-          spid.iPriVal = spid.iPriVal/2;   
-		      heat_step_val = 50;
-	    }
-	if (heat_step == 1)
-		{
-		  set_pwm (heat_step_val);
-		}
-	else if (heat_step == 0)
-		
-		{
-	     set_pwm ((u8) spid.iPriVal);  //(u8) spid.iPriVal
-		}
-}
 
 /***************************************************/
 /*
