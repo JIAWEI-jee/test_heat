@@ -76,6 +76,9 @@ typedef struct _flash_info_t
 {
 	u8 gap;
 	u8 timer;
+	u8 correct_value;
+	u8 correct_sign;
+	u8 correct_std;
 } flash_info_t;
 
 extern flash_info_t flash_info;

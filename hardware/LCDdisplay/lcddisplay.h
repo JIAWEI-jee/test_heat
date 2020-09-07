@@ -2,6 +2,7 @@
 #define _LCDDISPLAY_H
 #include "HC89F3541.H"
 
+
 #define COM0    P1_2
 #define COM1    P1_1
 #define COM2    P2_3
@@ -59,4 +60,5 @@ void lcd_clear_all ( void );
 void lcd_error ( void );
 void lcd_off(u8 std);
 void lcd_display_On(void);
+void lcd_cailbration ( void );
 #endif
