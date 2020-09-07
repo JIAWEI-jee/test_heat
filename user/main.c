@@ -21,7 +21,7 @@
 #include "PID.h"
 
 #define SKU 8104
-#define SOFT_VER "1.00.00"
+#define SOFT_VER "1.01.00"
 
 
 u16 adc_cnt = 0;
