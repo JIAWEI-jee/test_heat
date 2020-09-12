@@ -1,4 +1,4 @@
-C51 COMPILER V9.56.0.0   TIMER                                                             09/07/2020 19:35:38 PAGE 1   
+C51 COMPILER V9.56.0.0   TIMER                                                             09/12/2020 15:58:29 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE TIMER
@@ -55,212 +55,209 @@ line level    source
   43          
   44          void Heat_Operation ( u16 temp )
   45          {
-  46   1        if(get_device_state() == ON)
-  47   1        {
-  48   2          if (Input_Voltage_std == V_24_status)
-  49   2          {
-  50   3                 temp =  (temp/2) ;   
-  51   3           }
-  52   2      //    else
-C51 COMPILER V9.56.0.0   TIMER                                                             09/07/2020 19:35:38 PAGE 2   
+  46   1        
+  47   1        if(get_device_state() == ON)
+  48   1        {
+  49   2          if (Input_Voltage_std == V_12_status)
+  50   2          {
+  51   3                 temp =  temp*2 ;   
+  52   3           }
+C51 COMPILER V9.56.0.0   TIMER                                                             09/12/2020 15:58:29 PAGE 2   
 
-  53   2      //    {
-  54   2      //       temp = temp; 
-  55   2      //    }
-  56   2          pwm_jishu++;
-  57   2          if ( temp > pwm_jishu )
-  58   2          {
-  59   3            set_pwm ( 100 );
-  60   3      
-  61   3          }
-  62   2          else
-  63   2          {
-  64   3            set_pwm ( 0 );
-  65   3      
-  66   3          }
-  67   2          if ( pwm_jishu == pwm_count )
-  68   2          {
-  69   3            pwm_jishu =0;
-  70   3          }
-  71   2        } 
-  72   1      }
-  73          
-  74          
-  75          void set_time_sec_val ( u16 sec )
-  76          {
-  77   1        time_sec = sec;
-  78   1        time_cnt = 0;
-  79   1        gm_printf ( "set time second:%d\r\n",sec );
-  80   1      }
-  81          
-  82          
-  83          static void set_heat_val ( void )
-  84          {
-  85   1        if ( Heat_start_std == 1 )
-  86   1        {
-  87   2          if ( ++time_heat > Heat_Value )
-  88   2          {
-  89   3            //KEY_printf ( "exchange_heat_value \r\n" );
-  90   3            Heat_start_std = 0;
-  91   3            time_heat = 0;
-  92   3      
-  93   3             heat_step = 0;
-  94   3          }
-  95   2        }
-  96   1      }
-  97          
-  98          void set_time_sec ( void )
-  99          {
- 100   1        time_cnt = 0;
- 101   1        if ( flash_info.timer == TIMER_ON )
- 102   1        {
- 103   2          time_sec = 0;
- 104   2          cnt_heat_time = 0;
- 105   2          temp_time = 0;
- 106   2        }
- 107   1        else if ( flash_info.timer == TIMER_0_5H )
- 108   1        {
- 109   2          time_sec = 30*60;
- 110   2          cnt_heat_time = 0;
- 111   2          temp_time = 0;
- 112   2        }
- 113   1        else if ( flash_info.timer == TIMER_1H )
- 114   1        {
-C51 COMPILER V9.56.0.0   TIMER                                                             09/07/2020 19:35:38 PAGE 3   
+  53   2          pwm_jishu++;
+  54   2          if ( temp > pwm_jishu )
+  55   2          {
+  56   3            set_pwm ( 100 );
+  57   3      
+  58   3          }
+  59   2          else
+  60   2          {
+  61   3            set_pwm ( 0 );
+  62   3      
+  63   3          }
+  64   2          if ( pwm_jishu == pwm_count )
+  65   2          {
+  66   3            pwm_jishu =0;
+  67   3          }
+  68   2        } 
+  69   1      }
+  70          
+  71          
+  72          void set_time_sec_val ( u16 sec )
+  73          {
+  74   1        time_sec = sec;
+  75   1        time_cnt = 0;
+  76   1        gm_printf ( "set time second:%d\r\n",sec );
+  77   1      }
+  78          
+  79          
+  80          static void set_heat_val ( void )
+  81          {
+  82   1        if ( Heat_start_std == 1 )
+  83   1        {
+  84   2          if ( ++time_heat > Heat_Value )
+  85   2          {
+  86   3            //KEY_printf ( "exchange_heat_value \r\n" );
+  87   3            Heat_start_std = 0;
+  88   3            time_heat = 0;
+  89   3      
+  90   3             heat_step = 0;
+  91   3          }
+  92   2        }
+  93   1      }
+  94          
+  95          void set_time_sec ( void )
+  96          {
+  97   1        time_cnt = 0;
+  98   1        if ( flash_info.timer == TIMER_ON )
+  99   1        {
+ 100   2          time_sec = 0;
+ 101   2          cnt_heat_time = 0;
+ 102   2          temp_time = 0;
+ 103   2        }
+ 104   1        else if ( flash_info.timer == TIMER_0_5H )
+ 105   1        {
+ 106   2          time_sec = 30*60;
+ 107   2          cnt_heat_time = 0;
+ 108   2          temp_time = 0;
+ 109   2        }
+ 110   1        else if ( flash_info.timer == TIMER_1H )
+ 111   1        {
+ 112   2          time_sec = 60*60;
+ 113   2          cnt_heat_time = 0;
+ 114   2          temp_time = 0;
+C51 COMPILER V9.56.0.0   TIMER                                                             09/12/2020 15:58:29 PAGE 3   
 
- 115   2          time_sec = 60*60;
- 116   2          cnt_heat_time = 0;
- 117   2          temp_time = 0;
- 118   2        }
- 119   1        else if ( flash_info.timer == TIMER_2H )
- 120   1        {
- 121   2          time_sec = 2*60*60;
- 122   2          cnt_heat_time = 0;
- 123   2          temp_time = 0;
- 124   2        }
- 125   1        else if ( flash_info.timer == TIMER_4H )
- 126   1        {
- 127   2          time_sec = 4*60*60;
- 128   2          cnt_heat_time = 0;
- 129   2          temp_time = 0;
- 130   2        }
- 131   1        else if ( flash_info.timer == TIMER_8H )
- 132   1        {
- 133   2          time_sec = 8*60*60;
- 134   2          cnt_heat_time = 0;
- 135   2          temp_time = 0;
- 136   2        }
- 137   1        gm_printf ( "time second:%d \r\n",time_sec );
- 138   1      }
- 139          
- 140          
- 141          void time0_init ( void )
- 142          {
- 143   1        /**********************************TIM0配置初始化**************************************/
- 144   1        TCON1 = 0x00;           //Tx0定时器时钟为Fosc/12
- 145   1        TMOD = 0x00;            //16位重装载定时器/计数器
- 146   1      
- 147   1        //Tim0计算时间  = (65536 - 0xFACB) * (1 / (Fosc /Timer分频系数))
- 148   1        //        = 1333 / (16000000 / 12)
- 149   1        //        = 1 ms
- 150   1      
- 151   1        //定时1ms
- 152   1        //反推初值  = 65536 - ((1/1000) / (1/(Fosc / Timer分频系数)))
- 153   1        //        = 65536 - ((1/1000) / (1/(16000000 / 12)))
- 154   1        //      = 65536 - 1333
- 155   1        //      = 0xFACB
- 156   1      //    TH0 = 0xCB;  10ms
- 157   1      //  TL0 = 0xEB;
- 158   1        TH0 = 0xF5;
- 159   1        TL0 = 0x96;             //T0定时时间2ms     0x96     10ms   0xFB
- 160   1        IE |= 0x02;             //打开T0中断
- 161   1        TCON |= 0x10;           //使能T0
- 162   1      }
- 163          
- 164          
- 165          
- 166          //10ms
- 167          void TIMER0_Rpt ( void ) interrupt TIMER0_VECTOR
- 168          {
- 169   1        if ( get_device_state() == ON ) //flash_info.timer != TIMER_ON &&
- 170   1        {
- 171   2          time_cnt++;
- 172   2          if ( time_cnt >= 500 )
- 173   2          {
- 174   3            set_heat_val();
- 175   3      
- 176   3            if ( On_stay == 2 )  // stay on 模式下进行保护
-C51 COMPILER V9.56.0.0   TIMER                                                             09/07/2020 19:35:38 PAGE 4   
+ 115   2        }
+ 116   1        else if ( flash_info.timer == TIMER_2H )
+ 117   1        {
+ 118   2          time_sec = 2*60*60;
+ 119   2          cnt_heat_time = 0;
+ 120   2          temp_time = 0;
+ 121   2        }
+ 122   1        else if ( flash_info.timer == TIMER_4H )
+ 123   1        {
+ 124   2          time_sec = 4*60*60;
+ 125   2          cnt_heat_time = 0;
+ 126   2          temp_time = 0;
+ 127   2        }
+ 128   1        else if ( flash_info.timer == TIMER_8H )
+ 129   1        {
+ 130   2          time_sec = 8*60*60;
+ 131   2          cnt_heat_time = 0;
+ 132   2          temp_time = 0;
+ 133   2        }
+ 134   1        gm_printf ( "time second:%d \r\n",time_sec );
+ 135   1      }
+ 136          
+ 137          
+ 138          void time0_init ( void )
+ 139          {
+ 140   1        /**********************************TIM0配置初始化**************************************/
+ 141   1        TCON1 = 0x00;           //Tx0定时器时钟为Fosc/12
+ 142   1        TMOD = 0x00;            //16位重装载定时器/计数器
+ 143   1      
+ 144   1        //Tim0计算时间  = (65536 - 0xFACB) * (1 / (Fosc /Timer分频系数))
+ 145   1        //        = 1333 / (16000000 / 12)
+ 146   1        //        = 1 ms
+ 147   1      
+ 148   1        //定时1ms
+ 149   1        //反推初值  = 65536 - ((1/1000) / (1/(Fosc / Timer分频系数)))
+ 150   1        //        = 65536 - ((1/1000) / (1/(16000000 / 12)))
+ 151   1        //      = 65536 - 1333
+ 152   1        //      = 0xFACB
+ 153   1      //    TH0 = 0xCB;  10ms
+ 154   1      //  TL0 = 0xEB;
+ 155   1        TH0 = 0xF5;
+ 156   1        TL0 = 0x96;             //T0定时时间2ms     0x96     10ms   0xFB
+ 157   1        IE |= 0x02;             //打开T0中断
+ 158   1        TCON |= 0x10;           //使能T0
+ 159   1      }
+ 160          
+ 161          
+ 162          
+ 163          //10ms
+ 164          void TIMER0_Rpt ( void ) interrupt TIMER0_VECTOR
+ 165          {
+ 166   1        if ( get_device_state() == ON ) //flash_info.timer != TIMER_ON &&
+ 167   1        {
+ 168   2          time_cnt++;
+ 169   2          if ( time_cnt >= 500 )
+ 170   2          {
+ 171   3            set_heat_val();
+ 172   3      
+ 173   3            if ( On_stay == 2 )  // stay on 模式下进行保护
+ 174   3            {
+ 175   4              cnt_heat_time++;
+ 176   4              if ( cnt_heat_time > overrang_time )
+C51 COMPILER V9.56.0.0   TIMER                                                             09/12/2020 15:58:29 PAGE 4   
 
- 177   3            {
- 178   4              cnt_heat_time++;
- 179   4              if ( cnt_heat_time > overrang_time )
- 180   4              {
- 181   5                On_stay = 0;
- 182   5                cnt_heat_time = 0;
- 183   5                over_rang_time_std = 1;
- 184   5                //gm_printf ( "On_stay_overrang \r\n" );
- 185   5              }
- 186   4      
- 187   4            }
- 188   3            if ( time_sec > 0 )
- 189   3            {
- 190   4      
- 191   4              time_sec--;
- 192   4              if ( Gap_protect_std == 2 )
- 193   4              {
+ 177   4              {
+ 178   5                On_stay = 0;
+ 179   5                cnt_heat_time = 0;
+ 180   5                over_rang_time_std = 1;
+ 181   5                //gm_printf ( "On_stay_overrang \r\n" );
+ 182   5              }
+ 183   4      
+ 184   4            }
+ 185   3            if ( time_sec > 0 )
+ 186   3            {
+ 187   4      
+ 188   4              time_sec--;
+ 189   4              if ( Gap_protect_std == 2 )
+ 190   4              {
+ 191   5      
+ 192   5                cnt_heat_time++;
+ 193   5      
  194   5      
- 195   5                cnt_heat_time++;
- 196   5      
- 197   5      
- 198   5                if ( cnt_heat_time > overrang_time )
- 199   5                {
- 200   6                  over_rang_time_std = 1;
- 201   6                  Gap_protect_std = 0;
- 202   6                  cnt_heat_time = 0;
- 203   6                  //gm_printf ( "protect \r\n" );
- 204   6                }
- 205   5              }
- 206   4            }
- 207   3            else
- 208   3            {
- 209   4              if ( flash_info.timer != TIMER_ON )
- 210   4              {
- 211   5                set_device_state ( OFF );
- 212   5                time_sec = 0;
- 213   5                cnt_heat_time = 0;
- 214   5                Gap_protect_std = 0;
- 215   5                On_stay = 0;
- 216   5                //ht1621_all_clear(); //定时时间到
- 217   5                gm_printf ( "time off \r\n" );
- 218   5              }
- 219   4            }
- 220   3            //  gm_printf("time_sec=%d \r\n",time_sec);
- 221   3            time_cnt = 0;
- 222   3          }
- 223   2      
- 224   2      //      Heat_Operation ( 500 );
- 225   2          
- 226   2        }
- 227   1        else if (calibration_std == 1)
- 228   1        {
- 229   2          if (++cail_cnt > cail_value)
- 230   2          {
- 231   3            calibration_std = 0;
- 232   3            cail_cnt = 0;
- 233   3            
- 234   3          }
- 235   2        }
- 236   1        LCD_Display();
- 237   1        
- 238   1      }
-C51 COMPILER V9.56.0.0   TIMER                                                             09/07/2020 19:35:38 PAGE 5   
+ 195   5                if ( cnt_heat_time > overrang_time )
+ 196   5                {
+ 197   6                  over_rang_time_std = 1;
+ 198   6                  Gap_protect_std = 0;
+ 199   6                  cnt_heat_time = 0;
+ 200   6                  //gm_printf ( "protect \r\n" );
+ 201   6                }
+ 202   5              }
+ 203   4            }
+ 204   3            else
+ 205   3            {
+ 206   4              if ( flash_info.timer != TIMER_ON )
+ 207   4              {
+ 208   5                set_device_state ( OFF );
+ 209   5                time_sec = 0;
+ 210   5                cnt_heat_time = 0;
+ 211   5                Gap_protect_std = 0;
+ 212   5                On_stay = 0;
+ 213   5                //ht1621_all_clear(); //定时时间到
+ 214   5                gm_printf ( "time off \r\n" );
+ 215   5              }
+ 216   4            }
+ 217   3            //  gm_printf("time_sec=%d \r\n",time_sec);
+ 218   3            time_cnt = 0;
+ 219   3          }
+ 220   2      
+ 221   2      //      Heat_Operation ( 500 );
+ 222   2          
+ 223   2        }
+ 224   1        else if (calibration_std == 1)
+ 225   1        {
+ 226   2          if (++cail_cnt > cail_value)
+ 227   2          {
+ 228   3            calibration_std = 0;
+ 229   3            cail_cnt = 0;
+ 230   3            
+ 231   3          }
+ 232   2        }
+ 233   1        LCD_Display();
+ 234   1        
+ 235   1      }
+ 236          
 
- 239          
 
+C51 COMPILER V9.56.0.0   TIMER                                                             09/12/2020 15:58:29 PAGE 5   
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    656    ----
+   CODE SIZE        =    658    ----
    CONSTANT SIZE    =     51    ----
    XDATA SIZE       =     20       2
    PDATA SIZE       =   ----    ----

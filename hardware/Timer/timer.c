@@ -43,16 +43,13 @@ u16 pwm_jishu = 0;
 
 void Heat_Operation ( u16 temp )
 {
+	
 	if(get_device_state() == ON)
 	{
-		if (Input_Voltage_std == V_24_status)
+		if (Input_Voltage_std == V_12_status)
 		{
-           temp =  (temp/2) ;   
+           temp =  temp*2 ;   
 	   }
-//		else
-//		{
-//		   temp = temp; 
-//		}
 		pwm_jishu++;
 		if ( temp > pwm_jishu )
 		{

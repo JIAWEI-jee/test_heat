@@ -95,7 +95,7 @@ static void key_handle ( void )
 			{
 				flash_info.gap = GAP_1;
 			}
-		
+
 
 			first_heat_std = 1;
 			Set_Temp ( );
@@ -115,7 +115,7 @@ static void key_handle ( void )
 			{
 				flash_info.timer = TIMER_ON;
 			}
-      if ( flash_info.gap > GAP_1 )
+			if ( flash_info.gap > GAP_1 )
 			{
 				if ( flash_info.timer == TIMER_ON )
 				{
@@ -126,7 +126,7 @@ static void key_handle ( void )
 					Gap_protect_std = 2;
 				}
 			}
-		//	KEY_printf ( "timer:%d \r\n", ( u16 ) flash_info.timer );
+			//	KEY_printf ( "timer:%d \r\n", ( u16 ) flash_info.timer );
 			lcd_display_time ( flash_info.timer );
 			set_time_sec();
 			flah_save_data();
@@ -143,21 +143,19 @@ u16 calibration_temperature(u16 temper)
 		temp1 = (u8)temper;
 		usart_rx_flag = 0;
     flash_info.correct_std = 1;
-//		hal_uart_putchar(temp1);
-//		hal_uart_putchar(temper_val);
 	 if (temper_val > 15)	
 	 { 
 		if (temper_val > temp1)
 		{
 		  flash_info.correct_value = temper_val - temp1;
-			flash_info.correct_sign = 1; //为正公差
+			flash_info.correct_sign = 1;
 		}
 		else 
 		{
 		 flash_info.correct_value = temp1 - temper_val;
 			
 			hal_uart_putchar(flash_info.correct_value);
-		 flash_info.correct_sign = 2; //为负公差
+		 flash_info.correct_sign = 2; 
 		}	
 		if ((flash_info.correct_value < 2)||(flash_info.correct_value > 20))
 		{
@@ -258,15 +256,15 @@ void temperature_handle ( void )
 		{
 			if ( get_device_state() == ON )
 			{
-        lcd_off( ON );
-			   if ( first_heat_std == 1 )
+				lcd_off ( ON );
+				if ( first_heat_std == 1 )
 				{
 					first_heat_std = 0;
 					if ( temp > 50 )
 					{
 						Heat_start_std = 0;
 						heat_step = 0;
-					//	KEY_printf ( "first_heat_std heat_step = 0; \r\n" );  //pjw set
+						//	KEY_printf ( "first_heat_std heat_step = 0; \r\n" );  //pjw set
 					}
 					else
 					{
@@ -343,13 +341,13 @@ void main()
 	delay_ms ( 1200 );
 	lcd_clear_all ();
 	Detection_Input();
-  
+
 	gm_printf ( "\r\n==================================\r\n" );
 	gm_printf ( "sku:K%d \r\n", ( u16 ) SKU );
 	gm_printf ( "soft version:%s \r\n",SOFT_VER );
 	gm_printf ( "gap %d \r\n", ( u16 ) flash_info.gap );      //档位
 	gm_printf ( "timer %d \r\n", ( u16 ) flash_info.timer );  // 定时
-	gm_printf ( "Input_Voltage_std = %d\r\n" ,Input_Voltage_std); //输入电压
+	gm_printf ( "Input_Voltage_std = %d\r\n",Input_Voltage_std ); //输入电压
 	gm_printf ( "==================================\r\n" );
 
 	while ( 1 )
@@ -358,10 +356,10 @@ void main()
 
 		temperature_handle();
 		key_handle ();
-		 Heat_Operation ( 200 );
+		 Heat_Operation ( spid.iPriVal );
 	//	Protect ();
 		clear_wdt();
- 
+
 	}
 }
 
