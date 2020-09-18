@@ -252,7 +252,7 @@ void temperature_handle ( void )
 		temp = temp_calc ( adc_val1, adc_val2 );
 	//	KEY_printf ( "temp val:%d \r\n",temp );
     	temp =	calibration_temperature(temp);
-		KEY_printf ( "%d \r\n",temp );
+//		KEY_printf ( "%d \r\n",temp );
 
 		if (adc_val1 > 90)  //adc_val1 > 50
 		{
