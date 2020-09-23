@@ -239,26 +239,34 @@ if (flash_info.gap == GAP_3)
 void temperature_handle ( void )
 {
 	u16 temp = 0;
-	u16 adc_val1 = 0,adc_val2 = 0;
-
+	u16 adc_val1 = 0,adc_val2 = 0, Detection_vol = 0;
+  
 	adc_cnt++;
 
 	if ( adc_cnt >= 50000 )
 	{
 		adc_cnt = 0;
 		get_voltage ( &adc_val1,&adc_val2 );
-
+//        Detection_vol = Detection_Heat_Cailibration();
+		KEY_printf ( "Detection_vol = %d \r\n",Detection_vol );
 	//	KEY_printf ( "adv1 = %d adv2 =%d \r\n",adc_val1,adc_val2 );  //pjw set
 		temp = temp_calc ( adc_val1, adc_val2 );
 	//	KEY_printf ( "temp val:%d \r\n",temp );
     	temp =	calibration_temperature(temp);
 //		KEY_printf ( "%d \r\n",temp );
 
-		if (adc_val1 > 90)  //adc_val1 > 50
+			if ( Detection_vol > 800)
+		{
+		  calibration_std = 0;
+      lcd_off( Error );
+			lcd_error (  );
+			error_std = 1;
+		}
+	else	if (adc_val1 > 90)  //adc_val1 > 50
 		{
 			if ( get_device_state() == ON )
 			{
-        lcd_off( ON );
+                lcd_off( ON );
 			   if ( first_heat_std == 1 )
 				{
 					first_heat_std = 0;
@@ -307,12 +315,13 @@ void temperature_handle ( void )
 		else
 		{
 
-	calibration_std = 0;
-      lcd_off( Error );
+	        calibration_std = 0;
+            lcd_off( Error );
 			lcd_error (  );
 			error_std = 1;
 		}
 
+	
 
 	}
 
@@ -341,6 +350,9 @@ void main()
 	LCD_Init();
 	lcd_display_On();
 	delay_ms ( 1200 );
+	lcd_display_time ( TIMER_OFF );
+	 lcd_display_gap ( GAP_6 );
+	delay_ms ( 600 );
 	lcd_clear_all ();
 	Detection_Input();
   

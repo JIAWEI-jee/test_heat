@@ -6,8 +6,9 @@ extern u8 calibration_std;
 #define KEY_1 	P0_1
 #define KEY_2 	P2_7
 #define KEY_3 	P0_0
+//#define VOP_test P2_1
 
-#define Insert_Test P0_2
+//#define Insert_Test P0_2
 
 #define KEY_1_PRES 	1	//KEY1按下
 #define KEY_2_PRES	2	//KEY2按下

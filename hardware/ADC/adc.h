@@ -6,6 +6,8 @@
 
 void adc_init(void);
 u16 Detection_Input_Voltage(void);
+u16 Detection_Heat_Cailibration(void);
+
 void get_voltage ( u16* u1_voltage,u16* u3_voltage );
 
 #endif
