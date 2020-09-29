@@ -13,7 +13,8 @@ typedef enum TIMER_TYPE
 	TIMER_1H	= 0X02,
 	TIMER_2H	= 0X03,
 	TIMER_4H	= 0X04,
-	TIMER_8H	= 0X05
+	TIMER_8H	= 0X05,
+	TIMER_OFF = 0X06
 };
 
 typedef enum GAP_TYPE

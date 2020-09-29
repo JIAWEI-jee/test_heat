@@ -341,6 +341,9 @@ void main()
 	LCD_Init();
 	lcd_display_On();
 	delay_ms ( 1200 );
+	lcd_display_time ( TIMER_OFF );
+	 lcd_display_gap ( GAP_6 );
+	delay_ms ( 600 );
 	lcd_clear_all ();
 	Detection_Input();
   
