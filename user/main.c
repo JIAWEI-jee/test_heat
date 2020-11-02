@@ -31,7 +31,6 @@ u8  error_std = 0;
 void Clock ( void );
 void Set_Temp ( void );
 void Controll_Heat ( void );
-//void Protect ( void );
 void Detection_Input(void);
 
 
@@ -65,6 +64,7 @@ static void key_handle ( void )
 		if ( get_device_state() == ON )
 		{
 			set_device_state ( OFF );
+			led_set_off();
 			set_pwm ( 0 );
 		}
 		else
@@ -74,18 +74,23 @@ static void key_handle ( void )
 			Set_Temp ( );
 			//	gm_printf ( " spid.iSetVal = %d \r\n",  spid.iSetVal);
 			first_heat_std = 1;
-
+      led_set_on();
 		}
 	}
 	else if ( get_device_state() == ON )
 	{
 
+   if ( key_val == LED_STAY_ON )
+		{
+//		 	KEY_printf ( " KEY_led_PRES\r\n" );
+			led_set_on();
+		}
 
 
 		if ( key_val == KEY_2_PRES )
 		{
-
-			KEY_printf ( " KEY_2_PRES\r\n" );
+       led_set_on();
+//			KEY_printf ( " KEY_2_PRES\r\n" );
 			if ( flash_info.gap < GAP_H )
 			{
 				flash_info.gap++;
@@ -106,7 +111,7 @@ static void key_handle ( void )
 		}
 		else if ( key_val == KEY_3_PRES ) //??
 		{
-
+      led_set_on();
 			if ( flash_info.timer < 0x05 )
 			{
 				flash_info.timer++;
@@ -343,6 +348,7 @@ void main()
 	delay_ms ( 1200 );
 	lcd_display_time ( TIMER_OFF );
 	 lcd_display_gap ( GAP_6 );
+	 led_set_on();
 	delay_ms ( 600 );
 	lcd_clear_all ();
 	Detection_Input();
@@ -361,7 +367,7 @@ void main()
 
 		temperature_handle();
 		key_handle ();
-	//	Protect ();
+
 		clear_wdt();
 
 	}

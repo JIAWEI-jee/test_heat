@@ -15,6 +15,39 @@ u8 Heat_start_std = 0;
 u16 time_heat = 0;
 u16 temp_time = 0 ,cail_cnt = 0 ;
 u8  heat_step = 0;
+led_info LED = {0,0};
+
+void led_set_on(void)
+{
+  LED.led_std = 1;
+	LED.led_time_cnt = 0;
+}
+void led_set_off(void)
+{
+  LED.led_std = 0;
+	LED.led_time_cnt = 0;
+}
+
+static void led_time(void)
+{
+  if( LED.led_std == 1)
+	{
+		LED_IO = 1;
+	  if (++LED.led_time_cnt > LED_ON_TIME)
+		{
+		  LED_IO = 0;
+			 LED.led_std = 0;
+			LED.led_time_cnt = 0;
+		}
+	
+	}
+else
+{
+ LED_IO = 0;
+}
+
+}
+
 void set_time_sec_val ( u16 sec )
 {
 	time_sec = sec;
@@ -109,6 +142,7 @@ void time0_init ( void )
 //10ms
 void TIMER0_Rpt ( void ) interrupt TIMER0_VECTOR
 {
+	led_time();
 	if ( get_device_state() == ON ) //flash_info.timer != TIMER_ON &&
 	{
 		time_cnt++;
