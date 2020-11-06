@@ -344,12 +344,13 @@ void main()
 	pwm_init ( 200 );
 	wdt_init ( 2 );
 	LCD_Init();
+	 led_set_on();
 	lcd_display_On();
 	delay_ms ( 1200 );
 	lcd_display_time ( TIMER_OFF );
 	 lcd_display_gap ( GAP_6 );
-	 led_set_on();
 	delay_ms ( 600 );
+	led_set_off();
 	lcd_clear_all ();
 	Detection_Input();
   

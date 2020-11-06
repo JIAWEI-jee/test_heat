@@ -1,4 +1,4 @@
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 1   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE LCDDISPLAY
@@ -62,7 +62,7 @@ line level    source
   50   2          error_std = 1;
   51   2        }
   52   1        else if ( error_std == 1 )
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 2   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 2   
 
   53   1        {
   54   2          
@@ -126,7 +126,7 @@ line level    source
  112   3          LCDCON &=~ 0x10;   //FRAME 0
  113   3      
  114   3            COM0 = 1;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 3   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 3   
 
  115   3            COM1 = 0;
  116   3            COM2 = 0;
@@ -190,7 +190,7 @@ line level    source
  174   3            COM3 = 0;
  175   3            set_time ( lcd_set.time_display );
  176   3      
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 4   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 4   
 
  177   3            set_gap ( lcd_set.gap_display );
  178   3            guc_DisFreshStep = Frame1_COM2;
@@ -254,7 +254,7 @@ line level    source
  236          //      break;
  237          //    case Frame0_SEG2:
  238          //      SEG1 = 0;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 5   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 5   
 
  239          //      SEG2 = 0;
  240          //      SEG3 = 0;
@@ -318,7 +318,7 @@ line level    source
  298          //      SEG5 = 1;
  299          //
  300          //
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 6   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 6   
 
  301          //
  302          //
@@ -382,7 +382,7 @@ line level    source
  360          //      SEG1 = 1;
  361          //      SEG2 = 0;
  362          //      SEG3 = 0;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 7   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 7   
 
  363          //      SEG4 = 0;
  364          //      SEG5 = 0;
@@ -446,7 +446,7 @@ line level    source
  422   3      
  423   3              SEG3 = 0;
  424   3              SEG4 = 0;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 8   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 8   
 
  425   3            }
  426   2            if ( ( guc_DisFreshStep ==  Frame0_COM1 ) || ( guc_DisFreshStep == Frame1_COM1 ) )
@@ -510,7 +510,7 @@ line level    source
  484   2            if ( ( guc_DisFreshStep ==  Frame0_COM3 ) || ( guc_DisFreshStep == Frame1_COM3 ) )
  485   2            {
  486   3              SEG3 = 1;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 9   
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 9   
 
  487   3              SEG4 = 0;
  488   3            }
@@ -574,7 +574,7 @@ line level    source
  546   3              SEG4 = 1;
  547   3            }
  548   2            if ( ( guc_DisFreshStep ==  Frame0_COM2 ) || ( guc_DisFreshStep == Frame1_COM2 ) )
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 10  
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 10  
 
  549   2            {
  550   3              SEG3 = 1;
@@ -638,7 +638,7 @@ line level    source
  608   3      
  609   3              SEG3 = 1;
  610   3              SEG4 = 0;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 11  
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 11  
 
  611   3            }
  612   2            if ( ( guc_DisFreshStep ==  Frame0_COM1 ) || ( guc_DisFreshStep == Frame1_COM1 ) )
@@ -702,7 +702,7 @@ line level    source
  670          {
  671   1        switch ( number )
  672   1        {
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 12  
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 12  
 
  673   2          case TIMER_ON:
  674   2            if ( ( guc_DisFreshStep ==  Frame0_COM0 ) || ( guc_DisFreshStep == Frame1_COM0 ) )
@@ -766,7 +766,7 @@ line level    source
  732   3              SEG5 = 0;
  733   3            }
  734   2            if ( ( guc_DisFreshStep ==  Frame0_COM1 ) || ( guc_DisFreshStep == Frame1_COM1 ) )
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 13  
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 13  
 
  735   2            {
  736   3              SEG1 = 1;
@@ -830,7 +830,7 @@ line level    source
  794   2            {
  795   3              SEG1 = 0;
  796   3              SEG2 = 0;
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 14  
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 14  
 
  797   3              SEG5 = 0;
  798   3            }
@@ -894,7 +894,7 @@ line level    source
  856   3            }
  857   2            break;
  858   2        }
-C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/02/2020 17:18:10 PAGE 15  
+C51 COMPILER V9.56.0.0   LCDDISPLAY                                                        11/04/2020 11:07:52 PAGE 15  
 
  859   1      
  860   1      }

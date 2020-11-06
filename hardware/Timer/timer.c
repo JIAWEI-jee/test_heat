@@ -150,36 +150,36 @@ void TIMER0_Rpt ( void ) interrupt TIMER0_VECTOR
 		{
 			set_heat_val();
 
-			if ( On_stay == 2 )  // stay on 模式下进行保护
-			{
-				cnt_heat_time++;
-				if ( cnt_heat_time > overrang_time )
-				{
-					On_stay = 0;
-					cnt_heat_time = 0;
-					over_rang_time_std = 1;
-					//gm_printf ( "On_stay_overrang \r\n" );
-				}
+//			if ( On_stay == 2 )  // stay on 模式下进行保护
+//			{
+//				cnt_heat_time++;
+//				if ( cnt_heat_time > overrang_time )
+//				{
+//					On_stay = 0;
+//					cnt_heat_time = 0;
+//					over_rang_time_std = 1;
+//					//gm_printf ( "On_stay_overrang \r\n" );
+//				}
 
-			}
+//			}
 			if ( time_sec > 0 )
 			{
 
 				time_sec--;
-				if ( Gap_protect_std == 2 )
-				{
+//				if ( Gap_protect_std == 2 )
+//				{
 
-					cnt_heat_time++;
+//					cnt_heat_time++;
 
 
-					if ( cnt_heat_time > overrang_time )
-					{
-						over_rang_time_std = 1;
-						Gap_protect_std = 0;
-						cnt_heat_time = 0;
-						//gm_printf ( "protect \r\n" );
-					}
-				}
+//					if ( cnt_heat_time > overrang_time )
+//					{
+//						over_rang_time_std = 1;
+//						Gap_protect_std = 0;
+//						cnt_heat_time = 0;
+//						//gm_printf ( "protect \r\n" );
+//					}
+//				}
 			}
 			else
 			{
